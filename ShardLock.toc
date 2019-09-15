@@ -4,4 +4,3 @@
 ## Author: SeeMyWings@gmail.com
 ## Version: 0.1.0
 main.lua
-# main.xml
