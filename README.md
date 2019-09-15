@@ -12,7 +12,7 @@ Enable: /sl enable
 Disable: /sl disable
 Show Help: /sl help
 Get Shard Info: /sl info
-Set Max Soul Shards: /sl setmax <number>, default: 5
+Set Max Soul Shards, Default 5: /sl setmax <number>
 ```
  
 #### If you are setting a new max, then the current shards above max will be deleted
