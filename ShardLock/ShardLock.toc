@@ -1,0 +1,7 @@
+## Interface: 11302
+## Title: Shard Lock
+## Notes: Warlock Soul Shard Management System
+## Author: SeeMyWings@gmail.com
+## Version: 0.1.0
+main.lua
+# main.xml
