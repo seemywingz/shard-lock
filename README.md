@@ -4,7 +4,7 @@ World of Warcraft: Warlock Soul Shard Management System
 ### No need for a Soul Bag!  
 #### This addon enables you to set the maximum   number of Soul Shards allowed in all bags  
 #### No matter which bag or position in the bag  
-#### Shard Lock only looks to remove shards when   setting a new max, or after combat  
+#### Shard Lock only looks to remove shards when setting a new max, or after combat  
 
 ## Commands:
 ``` 
