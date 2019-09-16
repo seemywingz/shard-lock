@@ -6,5 +6,6 @@
 ## SavedVariables: maxShards
 
 src\ShardLock.lua
+src\options.lua
 src\cmd.lua
 src\main.lua

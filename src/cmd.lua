@@ -1,11 +1,12 @@
-local name, sl = ...
+local addonName, sl = ...
 
 local function showHelp(args)
   print("Shard Lock Usage:")
-  print("  Enable: /sl enable")
   print("  Show Help: /sl help")
+  print("  Enable: /sl enable")
   print("  Disable: /sl disable")
-  print("  Get Shard Info: /sl info")
+  print("  Configure: /sl config")
+  print("  Print Shard Info: /sl info")
   print("  Set Max Soul Shards: /sl setmax <number>")
   shardInfo()
 end
@@ -18,6 +19,13 @@ local function slashCommands(msg, editbox)
    
   if cmd == "help" then
     showHelp()
+
+  elseif cmd == "config" then
+    InterfaceOptionsFrame_OpenToCategory(Options.panel.name);
+    -- Note: Call this function twice (in a row), 
+    -- there is a bug in Blizzard's code which makes the first call (after login or /reload) fail. 
+    -- It opens interface options, but not on the addon's interface options, just the default interface options. 
+    InterfaceOptionsFrame_OpenToCategory(Options.panel.name);
 
   elseif cmd == "info"then
     shardInfo()
