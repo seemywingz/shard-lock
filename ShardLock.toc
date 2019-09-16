@@ -3,4 +3,8 @@
 ## Notes: Warlock Soul Shard Management System
 ## Author: SeeMyWings@gmail.com
 ## Version: 0.1.0
-main.lua
+## SavedVariables: maxShards
+
+src\ShardLock.lua
+src\cmd.lua
+src\main.lua

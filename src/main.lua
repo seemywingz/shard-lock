@@ -1,0 +1,20 @@
+local name, sl = ...
+
+-- EVENTS
+local frame, eventsFrame = CreateFrame("Frame"), {};
+
+function eventsFrame:PLAYER_REGEN_ENABLED(...) -- Player Left Combat
+  rmSoulShards();
+end
+
+-- Register Events Frame to OnEvent handler of Main Frame
+frame:SetScript("OnEvent", function(self, event, ...)
+ eventsFrame[event](self, ...); -- call one of the functions above
+end);
+
+-- Register all events for which handlers have been defined above
+for k, v in pairs(eventsFrame) do
+ frame:RegisterEvent(k);
+end
+
+print("Shard Lock Loaded: /sl help")
