@@ -9,6 +9,7 @@ end
 
 function eventsFrame:VARIABLES_LOADED(...) -- Addon and Saved Vars Loaded
   print("Shard Lock Loaded: /sl help")
+  loadOptions()
   shardInfo();
 end
 

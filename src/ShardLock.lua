@@ -15,11 +15,6 @@ function getShardCount()
   return GetItemCount(soulShardID)
 end
 
--- Print Shard Lock Configuration
-function shardInfo()
-  print("Soul Shards:",getShardCount()," Max:",maxShards)
-end
-
 -- Get Location of all Soul Shards
 function getShards()
 
@@ -34,6 +29,12 @@ function getShards()
   end
   return shards
 
+end
+
+-- Print Shard Lock Configuration
+function shardInfo()
+  shards = getShards()
+  print("Soul Shards:",table.getn(shards)," Max:",maxShards)
 end
 
 -- Remove Superfluous Soul Shards
@@ -58,7 +59,7 @@ function setMaxShards(max)
     print(max,"is NOT a Number, Setting Max Soul Shards to", maxShards)
   else
     maxShards = newMax
+    print("Max Soul Shards:", maxShards)
     rmSoulShards()
   end
-  shardInfo()
 end
