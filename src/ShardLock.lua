@@ -11,12 +11,12 @@ function Shard:create (o)
 end
 
 -- Get Current Number of Soul Shards in all Bags
-function getShardCount()
+function sl.getShardCount()
   return GetItemCount(soulShardID)
 end
 
 -- Get Location of all Soul Shards
-function getShards()
+function sl.getShards()
 
   shards = {}
   for b = 0, 4 do
@@ -32,18 +32,18 @@ function getShards()
 end
 
 -- Print Shard Lock Configuration
-function shardInfo()
-  shards = getShards()
+function sl.shardInfo()
+  shards = sl.getShards()
   print("Soul Shards:",table.getn(shards)," Max:",maxShards)
 end
 
 -- Remove Superfluous Soul Shards
-function rmSoulShards()
+function sl.rmSoulShards()
 
-  numShards = getShardCount()
+  numShards = sl.getShardCount()
   if numShards <= maxShards then return end
 
-  shards = getShards()
+  shards = sl.getShards()
   for i = 1, numShards - maxShards do 
     print("Deleting Soul Shard")
     PickupContainerItem(shards[i].bag, shards[i].slot) 
@@ -53,13 +53,13 @@ function rmSoulShards()
 end
 
 -- Set Maximum Number of Allowed Soul Shards in all Bags
-function setMaxShards(max)
+function sl.setMaxShards(max)
   newMax = tonumber(max)
   if newMax == nil then 
     print(max,"is NOT a Number, Setting Max Soul Shards to", maxShards)
   else
     maxShards = newMax
     print("Max Soul Shards:", maxShards)
-    rmSoulShards()
+    sl.rmSoulShards()
   end
 end

@@ -4,13 +4,13 @@ local addonName, sl = ...
 local frame, eventsFrame = CreateFrame("Frame"), {};
 
 function eventsFrame:PLAYER_REGEN_ENABLED(...) -- Player Left Combat
-  rmSoulShards();
+  sl.rmSoulShards();
 end
 
 function eventsFrame:VARIABLES_LOADED(...) -- Addon and Saved Vars Loaded
   print("Shard Lock Loaded: /sl help")
-  loadOptions()
-  shardInfo();
+  sl.loadOptions()
+  sl.shardInfo();
 end
 
 -- Register Events Frame to OnEvent handler of Main Frame

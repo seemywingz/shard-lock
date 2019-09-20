@@ -1,9 +1,9 @@
 ## Interface: 11302
 ## Title: Shard Lock
 ## Notes: Warlock Soul Shard Management System
-## Author: SeeMyWings@gmail.com
+## Author: SeeMyWings
 ## Version: 0.1.0
-## SavedVariables: maxShards
+# SavedVariables: maxShards
 
 src\ShardLock.lua
 src\options.lua

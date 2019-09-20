@@ -1,19 +1,19 @@
 local addonName, sl = ...
 
-function loadOptions ()
-  options = CreateFrame( "Frame");
-  options.name = addonName
-  InterfaceOptions_AddCategory(options);
+function sl.loadOptions ()
+  sl.optionsPane = CreateFrame("Frame");
+  sl.optionsPane.name = addonName
+  InterfaceOptions_AddCategory(sl.optionsPane);
   
-  local title = options:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+  local title = sl.optionsPane:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
   title:SetPoint("TOPLEFT", 16, -16)
-  title:SetText(options.name)
+  title:SetText(sl.optionsPane.name)
   
-  -- local maxText = options:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-  -- maxText:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
-  -- maxText:SetText("Max Shards")
+  local maxText = sl.optionsPane:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+  maxText:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
+  maxText:SetText("Max Shards")
   
-  local maxSlider = CreateFrame("Slider", "SL_MAX_SLIDER", options, "OptionsSliderTemplate")
+  local maxSlider = CreateFrame("Slider", "SL_MAX_SLIDER", sl.optionsPane, "OptionsSliderTemplate")
   local sliderMin = 1
   local sliderMax = 20
   maxSlider:SetWidth(200)
@@ -34,10 +34,18 @@ function loadOptions ()
   end)
   
   
-  function options.okay(self)
+  function sl.optionsPane:okay()
     print("!! Shard Lock Updated !!")
     local newMax = floor(maxSlider:GetValue())
-    setMaxShards(newMax)
+    sl.setMaxShards(newMax)
   end
+
+  -- function sl.optionsPane:okay()
+  --   xpcall(function()
+  --     print("!! Shard Lock Updated !!")
+  --   local newMax = floor(maxSlider:GetValue())
+  --   sl.setMaxShards(newMax)
+  --   end, geterrorhandler())
+  --  end
 
 end
