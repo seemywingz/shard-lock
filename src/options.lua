@@ -41,7 +41,7 @@ function sl.loadOptions ()
   end
 
   function sl.optionsPane:okay()
-      print("!! Shard Lock Updated !!")
+    print("!! Shard Lock Updated !!")
     local newMax = floor(maxSlider:GetValue())
     sl.setMaxShards(newMax)
    end

@@ -8,7 +8,7 @@ local function showHelp(args)
   print("  Configure: /sl config")
   print("  Print Shard Info: /sl info")
   print("  Set Max Soul Shards: /sl setmax <number>")
-  shardInfo()
+  sl.shardInfo()
 end
 
 -- SLASH COMMANDS
@@ -18,7 +18,7 @@ local function slashCommands(msg, editbox)
   local _, _, cmd, args = string.find(msg, "%s?(%w+)%s?(.*)")
    
   if cmd == "help" then
-    showHelp()
+    sl.showHelp()
 
   elseif cmd == "config" then
     InterfaceOptionsFrame_OpenToCategory(addonName);
@@ -28,7 +28,7 @@ local function slashCommands(msg, editbox)
     InterfaceOptionsFrame_OpenToCategory(addonName);
 
   elseif cmd == "info"then
-    shardInfo()
+    sl.shardInfo()
 
   elseif cmd == "disable" then
     DisableAddOn("ShardLock")
@@ -39,13 +39,13 @@ local function slashCommands(msg, editbox)
     print("Shard Lock Enabled")
 
   elseif cmd == "setmax" and args ~= "" then
-    setMaxShards(args)  
+    sl.setMaxShards(args)  
 
   elseif cmd == "rm" then
-    rmSoulShards()
+    sl.rmSoulShards()
 
   else -- DEFAULT: display some sort of help message
-    showHelp()
+    sl.showHelp()
   end
 end
 
