@@ -40,12 +40,10 @@ function sl.loadOptions ()
     sl.setMaxShards(newMax)
   end
 
-  -- function sl.optionsPane:okay()
-  --   xpcall(function()
-  --     print("!! Shard Lock Updated !!")
-  --   local newMax = floor(maxSlider:GetValue())
-  --   sl.setMaxShards(newMax)
-  --   end, geterrorhandler())
-  --  end
+  function sl.optionsPane:okay()
+      print("!! Shard Lock Updated !!")
+    local newMax = floor(maxSlider:GetValue())
+    sl.setMaxShards(newMax)
+   end
 
 end
